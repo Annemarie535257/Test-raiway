@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+POSTGRES_LOCALLY = False
 DATABASES = {
-    "default": dj_database_url.parse(os.getenv("DATABASE_URL", "postgresql://agrisense_db_bijc_user:YuwFqgbJAt3DBgSfUrKaqcCd16QCedhz@dpg-csbbpr5umphs73bae500-a.oregon-postgres.render.com/agrisense_db_bijc"))
+    "default": dj_database_url.parse(os.getenv("DATABASE_URL"))
 }
 
 # Quick-start development settings - unsuitable for production
@@ -39,7 +39,7 @@ SECRET_KEY = 'django-insecure-c6&!pw9836qlpcbudg0+3vld2fip_%$(87fhzd(bla_x(y=j=p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'test-raiway-production-939d.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://test-raiway-production-939d.up.railway.app']
 
 
